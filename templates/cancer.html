@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cancer prediction</title>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+     
+     <!-- Font Awesome Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Link css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- logo -->
+    <link rel="icon" href="{{ url_for('static', filename='cancer.jpeg') }}">
+</head>
+<body>
+     <!-- === Header start === -->
+     <header>
+        <a href="{{url_for('index')}}" class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" title="Logo"></a>
+        <div id="menu-bar" class="fas fa-hamburger"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('diabetes') }}">Diabetes</a></li>
+                <li><a href="{{ url_for('heart') }}">Heart</a></li>
+                <li><a href="{{ url_for('liver') }}">Liver</a></li>
+                <li><a href="{{ url_for('cancer') }}">Cancer</a></li>
+                <li><a href="{{ url_for('kidney') }}">Kidney</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- === Header End === -->
+    <!-- ==== Home Image ==== -->
+   <img class="image2" src="{{ url_for('static', filename='cancer.jpeg') }}" alt="diabetes">
+   <span class="title">Cancer Prediction</span>
+
+   <div class="card">
+    <form action="{{ url_for('predict') }}" method="POST">
+        <input class="form-input" type="text" name="radius_mean" placeholder="radius_mean eg: 20.57" required><br>
+        <input class="form-input" type="text" name="texture_mean" placeholder="texture_mean eg: 17.77" required><br>
+        <input class="form-input" type="text" name="perimeter_mean" placeholder="perimeter_mean eg: 132.90" required><br>
+        <input class="form-input" type="text" name="area_mean" placeholder="area_mean eg: 1326.0" required><br>
+        <input class="form-input" type="text" name="smoothness_mean" placeholder="smoothness_mean eg: 0.08474" required><br>
+        <input class="form-input" type="text" name="compactness_mean" placeholder="compactness_mean eg: 0.07864" required><br>
+        <input class="form-input" type="text" name="concavity_mean" placeholder="concavity_mean eg: 0.0869" required><br>
+        <input class="form-input" type="text" name="concave points_mean" placeholder="concave points_mean eg: 0.07017" required><br>
+        <input class="form-input" type="text" name="symmetry_mean" placeholder="symmetry_mean eg: 0.1812" required><br>
+        <input class="form-input" type="text" name="radius_se" placeholder="radius_se eg: 0.05667" required><br>
+        <input class="form-input" type="text" name="perimeter_se" placeholder="perimeter_se eg: 3.398" required><br>
+        <input class="form-input" type="text" name="area_se" placeholder="area_se eg: 74.08" required><br>
+        <input class="form-input" type="text" name="compactness_se" placeholder="compactness_se eg: 0.01308" required><br>
+        <input class="form-input" type="text" name="concavity_se" placeholder="concavity_se eg: 0.01860" required><br>
+        <input class="form-input" type="text" name="concave points_se" placeholder="concave points_se eg: 0.01340" required><br>
+        <input class="form-input" type="text" name="fractal_dimension_se" placeholder="fractal_dimension_se eg: 0.003532" required><br>
+        <input class="form-input" type="text" name="radius_worst" placeholder="radius_worst eg: 24.99" required><br>
+        <input class="form-input" type="text" name="texture_worst" placeholder="texture_worst eg: 23.41" required><br>
+        <input class="form-input" type="text" name="perimeter_worst" placeholder="perimeter_worst eg: 158.80" required><br>
+        <input class="form-input" type="text" name="area_worst" placeholder="area_worst eg: 1956.0" required><br>
+        <input class="form-input" type="text" name="smoothness_worst" placeholder="smoothness_worst eg: 0.1238" required><br>
+        <input class="form-input" type="text" name="compactness_worst" placeholder="compactness_worst eg: 0.1866" required><br>
+        <input class="form-input" type="text" name="concavity_worst" placeholder="concavity_worst eg: 0.2416" required><br>
+        <input class="form-input" type="text" name="concave points_worst" placeholder="concave points_worst eg: 0.1860" required><br>
+        <input class="form-input" type="text" name="symmetry_worst" placeholder="symmetry_worst eg: 0.2750" required><br>
+        <input class="form-input" type="text" name="fractal_dimension_worst" placeholder="fractal_dimension_worst eg: 0.08902" required><br>
+
+
+    <input type="submit" class="my-cta-button" value="predict">
+    </form>
+</div>
+
+
+
+
+
+<!-- ===== Footer ===== -->
+    <div class="footer">
+        <p>Developed by Rishabh👨‍✈️ and Varsha👩‍🚀</p>
+    </div>
+    <!-- Jquery Link -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>

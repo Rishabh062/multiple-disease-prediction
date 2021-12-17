@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liver disease prediction</title>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+     
+     <!-- Font Awesome Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Link css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- logo -->
+    <link rel="icon" href="{{ url_for('static', filename='liver.jpg') }}">
+</head>
+<body>
+     <!-- === Header start === -->
+     <header>
+        <a href="{{url_for('index')}}" class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" title="Logo"></a>
+        <div id="menu-bar" class="fas fa-hamburger"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('diabetes') }}">Diabetes</a></li>
+                <li><a href="{{ url_for('heart') }}">Heart</a></li>
+                <li><a href="{{ url_for('liver') }}">Liver</a></li>
+                <li><a href="{{ url_for('cancer') }}">Cancer</a></li>
+                <li><a href="{{ url_for('kidney') }}">Kidney</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- === Header End === -->
+    <!-- ==== Home Image ==== -->
+    <img class="image2" src="{{ url_for('static', filename='liver.jpg') }}" alt="diabetes">
+    <span class="title">Liver Prediction</span>
+    <div class="card">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <input class="form-input" type="text" name="Age" placeholder="Age eg:62" required><br>
+            <input class="form-input" type="text" name="Total_Bilirubin" placeholder="Total Bilirubin eg: 7.3" required><br>
+            <input class="form-input" type="text" name="Direct_Bilirubin" placeholder="Direct Bilirubin eg: 4.1" required><br>
+            <input class="form-input" type="text" name="Alkaline_Phosphotase" placeholder="Alkaline Phosphotase eg: 490" required><br>
+            <input class="form-input" type="text" name="Alamine_Aminotransferase" placeholder="Alamine Aminotransferase eg: 60" required><br>
+            <input class="form-input" type="text" name="Aspartate_Aminotransferase" placeholder="Aspartate Aminotransferase eg: 68" required><br>
+            <input class="form-input" type="text" name="Total_Protiens" placeholder="Total Protiens eg: 7.0" required><br>
+            <input class="form-input" type="text" name="Albumin" placeholder="Albumin eg: 3.3" required><br>
+            <input class="form-input" type="text" name="Albumin_and_Globulin_Ratio" placeholder="Albumin and Globulin Ratio eg: 0.89" required><br>
+            <input class="form-input" type="text" name="Gender_Male" placeholder="Gender(Male: 1, Female: 0)" required><br>
+            
+            <input type="submit" class="my-cta-button" value="predict">
+        </form>
+    </div>
+
+
+    <!-- ===== Footer ===== -->
+    <div class="footer">
+        <p>Developed by Rishabh👨‍✈️ and Varsha👩‍🚀</p>
+    </div>
+    <!-- Jquery Link -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

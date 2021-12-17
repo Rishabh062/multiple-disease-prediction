@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Disease Prediction</title>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+     
+     <!-- Font Awesome Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- logo -->
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+
+
+</head>
+
+<body>
+    <!-- === Header start === -->
+    <header>
+        <a href="{{url_for('index')}}" class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" title="Logo"></a>
+        <div id="menu-bar" class="fas fa-hamburger"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('diabetes') }}">Diabetes</a></li>
+                <li><a href="{{ url_for('heart') }}">Heart</a></li>
+                <li><a href="{{ url_for('liver') }}">Liver</a></li>
+                <li><a href="{{ url_for('cancer') }}">Cancer</a></li>
+                <li><a href="{{ url_for('kidney') }}">Kidney</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- === Header End === -->
+
+    <!-- === Home Start -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Machine learning based multiple disease prediction system</h3>
+            <p>This website is built with the motive to predict various
+                disease based on symptoms and other factors.
+            </p>
+        </div>
+        <div class="image"><img src="{{ url_for('static', filename='home-image.jpeg') }}" alt=""></div>
+    </section>
+    <section class="about">
+        <div class="content_about">
+            <h3>Model Accuracy</h3>
+            <ul>
+                <li>Diabetes : 97%</li>
+                <li>Heart : 83.61%</li>
+                <li>Kidney : 100%</li>
+                <li>Liver: 77.97%</li>
+                <li>Cancer : 94.74%</li>
+              
+            </ul>
+            <h3>Disease which our webApp can predict are</h3>
+            <div class="box-container">
+            <div class="box">
+                <span class="symptoms">Diabetes</span>
+                <p class="description"> Diabetes is a chronic disease that occurs either when the pancreas does not
+                    produce enough insulin or when the body cannot effectively use the insulin it produces. Insulin is a
+                    hormone that regulates blood sugar. Hyperglycaemia, or raised blood sugar, is a common effect of
+                    uncontrolled diabetes and over time leads to
+                    serious damage to many of the body's systems, especially the nerves and blood vessels.</p>
+                <span class="symptoms">Symptoms</span>
+                <ul class="list-symptons">
+                    <li>Increased thirst</li>
+                    <li>Frequent urination</li>
+                    <li>Extreme hunger</li>
+                    <li>Blurred vision</li>
+                </ul>
+            </div> 
+
+            <div class="box">
+                <span class="symptoms">Heart disease</span>
+                <p class="description">Heart disease describes a range of conditions that affect your heart. It includes Blood vessel disease, such as coronary artery disease.
+                    Heart rhythm problems (arrhythmias). Heart valve disease. Heart defects you're born with (congenital heart defects)</p>
+                <span class="symptoms">Symptoms</span>
+                <ul class="list-symptoms">
+                    <li>Chest pain</li>
+                    <li>Shortness of breath</li>
+                    <li>Pain in the neck, jaw, throat, upper abdomen or back</li>
+                    <li>weakness or coldness in your legs</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <span class="symptoms">Liver disease</span>
+                <p class="description"> Your liver is your body's largest solid organ. Symptoms of liver disease may vary, but they often include
+                    swelling and pain. The most common liver disease is hepatitis. Hepatitis is a chronic condition that can
+                     affect any part of the liver, including the liver itself. Sometimes there are no symptoms.
+                </p>
+                <span class="symptoms">Symptoms</span>
+                <ul class="list-symptons">
+                    <li>yellow skin and eyes</li>
+                    <li>swollen ankles, legs, or abdomen</li>
+                    <li>nausea</li>
+                    <li>vomiting</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <span class="symptoms">Chronic Kidney Disease</span>
+                <p class="description">Chronic kidney disease, also called chronic kidney failure, describe the gradual loss of kidney function. 
+                    Your kidney function wastes and excess fluids from your blood, which are then excreted in your urine. When chronic kidney disease reaches an 
+                    advanced stage, dangerous levels of fluid, electrolytes and wastes can build up in your body.
+                </p>
+                <span class="symptoms">Symptoms</span>
+                <ul class="list-symptons">
+                    <li>Nausea</li>
+                    <li>Loss of appetite</li>
+                    <li>Fatigue</li>
+                    <li>High blood pressure (hypertension)</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <span class="symptoms">Brest Cancer</span>
+                <p class="description"> Brest cancer is a cancer that form in the cells of a brest. Brest cancer 
+                    can occurs in both men and women but it is more common among womens. </p>
+                <span class="symptoms">Symptoms</span>
+                <ul class="list-symptons">
+                    <li>A lump or mass in the breast that feels different from the surrounding tissue</li>
+                    <li>Change is the shape, size, or appearance of the breast</li>
+                    <li>Breast pain</li>
+                    <li>Changes in the skin over the breast, for example, dimpling</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <span class="symptoms">Coming soon</span>
+                <p class="description">I am planning to implement some more test in the coming future. Currently our website can 
+                    predict 5 types of diseases. All of them are based on the symptoms, I have implemented various machine learning models to predict those disease. 
+                </p>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>Developed by Rishabh👨‍✈️ and Varsha👩‍🚀</p>
+    </div>
+<!-- Jquery Link -->
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>

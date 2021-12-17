@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+     
+     <!-- Font Awesome Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="result_main">
+    <h3 class="result_heading">Result</h3>
+    <div class="result_row">
+        {% if prediction==1 %}
+        <div class="suffer">SORRY!!! You are suffering from disease 😔, please visit a doctor.</div>
+        {% elif prediction==0 %}
+        <div class="not_suffer">GREAT!! You are healthy. It's time to celebrate 🥳</div>
+        {% endif %}
+
+    </div>
+
+    <div class="result_home">
+        <div class="return"><a href="{{ url_for('index') }}">Home</a></div>
+    </div>
+    
+</body>
+</html>
