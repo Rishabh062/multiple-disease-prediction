@@ -14,7 +14,8 @@
 
 > <code>pip install requirements.txt</code>
 
-> <code>run project</code>
+> <code>run python app.py on console</code>
+> <code>Now Project will start running</code>
 
 > Don't forgot to star this repository. ⭐
 
